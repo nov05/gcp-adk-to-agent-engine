@@ -56,9 +56,15 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:$SERVICE_AGENT" \
     --role="roles/aiplatform.user"
 ```
+
 ```bash
 cd ~/adk_to_agent_engine/transcript_summarization_agent
 python3 query_agent_engine.py
+```
+Example output:
+```bash
+student_04_2365c655b4da@cloudshell:~/adk_to_agent_engine/transcript_summarization_agent (qwiklabs-gcp-00-56c8aff6759a)$ python3 query_agent_engine.py
+[remote response] The user interacted with a virtual vehicle sales agent, expressing interest in buying a boat. After inquiring about the value of $50,000 for a boat, the agent confirmed it would purchase a "very nice boat," leading the user to agree to proceed with the purchase.
 ```
 
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
