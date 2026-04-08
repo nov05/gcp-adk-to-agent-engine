@@ -44,4 +44,17 @@ adk deploy agent_engine transcript_summarization_agent \
 ```
 
 ## 👉 Task 3. Get and query an agent deployed to Agent Engine
+
+```bash
+PROJECT_NUMBER=$(gcloud projects describe $GOOGLE_CLOUD_PROJECT --format="value(projectNumber)")
+echo $PROJECT_NUMBER
+SERVICE_AGENT="service-$PROJECT_NUMBER@gcp-sa-aiplatform-re.iam.gserviceaccount.com"
+echo $SERVICE_AGENT
+```
+```bash
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:$SERVICE_AGENT" \
+    --role="roles/aiplatform.user"
+```
+
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
