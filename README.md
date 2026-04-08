@@ -2,6 +2,10 @@
 
 * Lab - https://www.skills.google/paths/3273/course_templates/1275/labs/606597
 
+<br><br>
+
+---   
+
 ## 👉 Task 1. Install ADK and set up your environment
 
 ```bash
