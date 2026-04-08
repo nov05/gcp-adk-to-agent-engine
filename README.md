@@ -29,6 +29,8 @@ EOF
 cp .env transcript_summarization_agent/.env
 ```
 
+<br> 
+
 ## 👉 Task 2. Deploy to Agent Engine using the command line deploy method
 
 ```bash
@@ -46,6 +48,10 @@ adk deploy agent_engine transcript_summarization_agent \
 --region $REGION \
 --staging_bucket gs://$GOOGLE_CLOUD_PROJECT-bucket
 ```
+
+<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/gcp-adk-to-agent-engine/2026-04-08%2001_03_02-NVIDIA%20GeForce%20Overlay.jpg" width=800>  
+
+<br>  
 
 ## 👉 Task 3. Get and query an agent deployed to Agent Engine
 
@@ -70,6 +76,10 @@ Output example:
 student_04_2365c655b4da@cloudshell:~/adk_to_agent_engine/transcript_summarization_agent (qwiklabs-gcp-00-56c8aff6759a)$ python3 query_agent_engine.py
 [remote response] The user interacted with a virtual vehicle sales agent, expressing interest in buying a boat. After inquiring about the value of $50,000 for a boat, the agent confirmed it would purchase a "very nice boat," leading the user to agree to proceed with the purchase.
 ```
+
+<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/gcp-adk-to-agent-engine/2026-04-08%2001_19_57-NVIDIA%20GeForce%20Overlay.jpg" width=800>  
+
+<br>  
 
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
 
@@ -99,3 +109,6 @@ export AE_RESOURCE_ID=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
 | jq -r '.reasoningEngines[] | .name | split("/")[-1]')
 echo $AE_RESOURCE_ID
 ```
+
+<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/gcp-adk-to-agent-engine/2026-04-08%2001_21_31-NVIDIA%20GeForce%20Overlay.jpg" width=800>    
+<img src="https://raw.githubusercontent.com/nov05/pictures/refs/heads/master/gcp-adk-to-agent-engine/2026-04-08%2001_36_05-.jpg" width=800>  
