@@ -10,7 +10,8 @@ from vertexai import agent_engines
 # Load environment variables and initialize Vertex AI
 load_dotenv()
 project_id = os.environ["GOOGLE_CLOUD_PROJECT"]
-location = "us-central1"
+# location = "us-central1"  ## Changed by Nov05
+location = os.environ["REGION"]
 app_name = os.environ.get("APP_NAME", "Transcript Summarizer")
 bucket_name = f"gs://{project_id}-bucket"
 
