@@ -27,4 +27,4 @@ cp .env transcript_summarization_agent/.env
 
 ## 👉 Task 2. Deploy to Agent Engine using the command line deploy method
 ## 👉 Task 3. Get and query an agent deployed to Agent Engine
-Task 4. View and delete agents deployed to Agent Engine
+## 👉 Task 4. View and delete agents deployed to Agent Engine
