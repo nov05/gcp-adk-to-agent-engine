@@ -61,10 +61,36 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
 cd ~/adk_to_agent_engine/transcript_summarization_agent
 python3 query_agent_engine.py
 ```
-Example output:
+Output example:
 ```bash
 student_04_2365c655b4da@cloudshell:~/adk_to_agent_engine/transcript_summarization_agent (qwiklabs-gcp-00-56c8aff6759a)$ python3 query_agent_engine.py
 [remote response] The user interacted with a virtual vehicle sales agent, expressing interest in buying a boat. After inquiring about the value of $50,000 for a boat, the agent confirmed it would purchase a "very nice boat," leading the user to agree to proceed with the purchase.
 ```
 
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
+
+AE_RESOURCE_NAME example: `projects/505735905868/locations/us-central1/reasoningEngines/831204952075403264`
+
+```bash
+export ACCESS_TOKEN=$(gcloud auth print-access-token)
+echo $ACCESS_TOKEN
+```
+```bash
+export AE_RESOURCE_NAME=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+"https://$REGION-aiplatform.googleapis.com/v1/projects/$GOOGLE_CLOUD_PROJECT/locations/$REGION/reasoningEngines" \
+| jq -r '.reasoningEngines[] | .name')
+echo $AE_RESOURCE_NAME
+```
+```bash
+cd ~/adk_to_agent_engine
+python3 agent_engine_utils.py delete $AE_RESOURCE_NAME
+```
+
+P.S.  
+If you want to get the Agent Engine resource ID:  
+```bash
+export AE_RESOURCE_ID=$(curl -s -H "Authorization: Bearer $ACCESS_TOKEN" \
+"https://$REGION-aiplatform.googleapis.com/v1/projects/$GOOGLE_CLOUD_PROJECT/locations/$REGION/reasoningEngines" \
+| jq -r '.reasoningEngines[] | .name | split("/")[-1]')
+echo $AE_RESOURCE_ID
+```
