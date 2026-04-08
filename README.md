@@ -56,5 +56,9 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:$SERVICE_AGENT" \
     --role="roles/aiplatform.user"
 ```
+```bash
+cd ~/adk_to_agent_engine/transcript_summarization_agent
+python3 query_agent_engine.py
+```
 
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
