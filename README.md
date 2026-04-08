@@ -26,5 +26,22 @@ cp .env transcript_summarization_agent/.env
 ```
 
 ## 👉 Task 2. Deploy to Agent Engine using the command line deploy method
+
+```bash
+yes | gcloud services enable orgpolicy.googleapis.com --project=$GOOGLE_CLOUD_PROJECT --quiet
+export REGION=$(gcloud org-policies describe constraints/gcp.resourceLocations \
+  --project=$GOOGLE_CLOUD_PROJECT \
+  --format="value(spec.rules[0].values.allowedValues)" \
+  | grep -oP '(?<=in:)(us|europe|asia)[a-z0-9-]+(?=-locations)' \
+  | head -n 1)
+echo $REGION
+```
+```bash
+adk deploy agent_engine transcript_summarization_agent \
+--display_name "Transcript Summarizer" \
+--region $REGION \
+--staging_bucket gs://$GOOGLE_CLOUD_PROJECT-bucket
+```
+
 ## 👉 Task 3. Get and query an agent deployed to Agent Engine
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
