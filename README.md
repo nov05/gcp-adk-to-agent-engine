@@ -73,7 +73,7 @@ student_04_2365c655b4da@cloudshell:~/adk_to_agent_engine/transcript_summarizatio
 
 ## 👉 Task 4. View and delete agents deployed to Agent Engine
 
-AE_RESOURCE_NAME example: `projects/505735905868/locations/us-central1/reasoningEngines/831204952075403264`
+`$AE_RESOURCE_NAME example`: `projects/505735905868/locations/us-central1/reasoningEngines/831204952075403264`
 
 ```bash
 export ACCESS_TOKEN=$(gcloud auth print-access-token)
